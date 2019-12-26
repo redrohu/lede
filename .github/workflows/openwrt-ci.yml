@@ -47,6 +47,13 @@ jobs:
           # ln -s /mnt/openwrt/staging_dir ./staging_dir
 
           df -h
+          
+      - name: 添加ccx自定义
+        run: |
+          git clone https://github.com/rohu168/luci-app-ssr-plus-jo.git package/luci-app-ssr-plus-jo
+          git clone https://github.com/Ameykyl/my.git package/my
+          git clone https://github.com/Ameykyl/luci-app-koolproxyR.git package/luci-app-koolproxyR
+       #  git clone https://github.com/rosywrt/luci-theme-rosy
 
       - name: Update feeds
         run: |
@@ -55,7 +62,10 @@ jobs:
 
       - name: Generate configuration file
         run: make defconfig
-
+        
+      - name: 云端menuconfig
+        uses: P3TERX/debugger-action@master
+        
       - name: Make download
         run: |
           make download -j8
