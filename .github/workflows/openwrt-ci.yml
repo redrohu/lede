@@ -12,6 +12,10 @@ name: OpenWrt-CI
 on:
   schedule:
     - cron: 0 20 * * *
+ 
+ #star一键编译     
+  watch:
+    types: [started]
 
 jobs:
 
