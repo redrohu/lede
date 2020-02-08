@@ -81,9 +81,9 @@ endef
 
 define Device/buffalo_wxr-2533dhp
 	$(call Device/LegacyImage)
-	DEVICE_DTS := qcom-ipq8064-wxr-2533dhp
 	DEVICE_VENDOR := Buffalo
 	DEVICE_MODEL := WXR-2533DHP
+	DEVICE_DTS := qcom-ipq8064-wxr-2533dhp
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	IMAGE_SIZE := 65536k
@@ -100,9 +100,9 @@ define Device/compex_wpq864
 	$(call Device/UbiFit)
 	DEVICE_VENDOR := Compex
 	DEVICE_MODEL := WPQ864
+	DEVICE_DTS := qcom-ipq8064-wpq864
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
-	DEVICE_DTS := qcom-ipq8064-wpq864
 	DEVICE_PACKAGES := kmod-gpio-beeper
 endef
 TARGET_DEVICES += compex_wpq864
@@ -279,11 +279,11 @@ define Device/tplink_vr2600v
 	DEVICE_VENDOR := TP-Link
 	DEVICE_MODEL := Archer VR2600v
 	DEVICE_VARIANT := v1
+	DEVICE_DTS := qcom-ipq8064-vr2600v
 	KERNEL_SUFFIX := -uImage
 	KERNEL = kernel-bin | append-dtb | uImage none
 	KERNEL_NAME := zImage
 	KERNEL_SIZE := 3072k
-	DEVICE_DTS := qcom-ipq8064-vr2600v
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	BOARD_NAME := vr2600v
